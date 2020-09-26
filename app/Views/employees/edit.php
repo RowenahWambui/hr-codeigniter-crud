@@ -1,16 +1,27 @@
-<h3>Edit </h3>
-<form action="<?= site_url('/update') ?>" method="post">
+<?= $this->extend("layout/admin-template") ?>
+<?= $this->section('content') ?>
+<div class="container">
+  <form action="<?= site_url('/update') ?>" method="post">
     <input type="hidden" name="id" id="id" value="<?php echo $employee_data['id']; ?>">
-    <label for="">Full Name :</label>
-    <input type="text" name="fullName" placeholder="Name" value="<?php echo $employee_data['Name'] ?>">
-    <br>
-    <label for="">Email Address :</label>
-    <input type="email" name="emailAddress" placeholder="Email address" value="<?php echo $employee_data['Email'] ?>">
-    <br>
-    <label for="">Telephone :</label>
-    <input type="text" name="telNumber" placeholder="Telephone Number" value="<?php echo $employee_data['Tel_Number'] ?>">
-    <br>
-    <label for="">Residence:</label>
-    <input type="text" name="residence" placeholder="Residence"  value="<?php echo $employee_data['Residence'] ?> ">
-    <input type="submit" value="Save">
-</form>
+      <div class="form-group">
+        <label for="">Full Name </label>
+        <input type="text" name="fullName" class="form-control" value="<?php echo $employee_data['Name'] ?>">
+      </div>
+      <div clas="form-group">
+          <label for="">Email Address </label>
+          <input type="email" name="emailAddress" class="form-control" value="<?php echo $employee_data['Email'] ?>">
+      </div>
+      <div class="form-group">
+          <label for="">Telephone </label>
+          <input type="text" name="telNumber" class="form-control" value="<?php echo $employee_data['Tel_Number'] ?>">
+      </div>
+      <div class="form-group">
+        <label for="">Residence</label>
+        <input type="text" name="residence" class="form-control"  value="<?php echo $employee_data['Residence'] ?> ">
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Save Changes"/>
+      </div>
+  </form>
+
+  <?= $this->endSection('content') ?>

@@ -14,11 +14,7 @@ class EmployeesController extends BaseController{
         return view('employees/index', $data);
 
     }
-    public function create(){
 
-        return view('employees/create');
-
-    }
     public function save(){
 
         $employeeModel = new Employee();
