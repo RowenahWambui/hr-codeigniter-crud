@@ -40,7 +40,6 @@ class UserController extends BaseController{
 							  ->first();
 
 				$this->setUserSession($user);
-				//$session->setFlashdata('success', 'Successful Registration');
                 return $this->response->redirect(site_url('/employees'));
 
 			}
@@ -61,6 +60,11 @@ class UserController extends BaseController{
 		session()->set($data);
 		return true;
 	}
+	public function logout() {
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('isLoggedIn');
+        redirect(base_url('login'));
+    }
 
     public function register(){
         $data = [];
@@ -95,5 +99,5 @@ class UserController extends BaseController{
        
         return view('register',$data);
 
-    }
+	}
 }

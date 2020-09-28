@@ -1,5 +1,7 @@
-<?= $this->extend("layout/admin-template") ?>
-<?= $this->section('content') ?>
+<?= $this->extend("layout/admin-template");
+ $this->section('editContent');
+ session()->set('isLoggedIn'); 
+  ?>
 <div class="container">
   <form action="<?= site_url('/update') ?>" method="post">
     <input type="hidden" name="id" id="id" value="<?php echo $employee_data['id']; ?>">
@@ -24,4 +26,4 @@
       </div>
   </form>
 
-  <?= $this->endSection('content') ?>
+  <?= $this->endSection('editContent') ?>

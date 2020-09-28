@@ -1,10 +1,11 @@
-<?= $this->extend("layout/admin-template"); ?>
-<?= $this->section('content') ?>
+<?= $this->extend("layout/admin-template"); 
+     session()->has('isLoggedIn'); 
+ $this->section('content') ?>
 <div class="container">
     <h3>Employee Details</h3>
     <button type="button" class="float-right btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add new Employee Details</button>
 
-    <table class="table" >
+    <table class="table table-bordered table-responsive" >
         <tr>
             <th>Id</th>
             <th>Name</th>
@@ -64,7 +65,6 @@
           <div class="modal-footer">
             <input type="submit" class="btn btn-primary" value="Save" >
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
           </div>
         </div>
       </div>
